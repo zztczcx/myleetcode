@@ -36,3 +36,30 @@ class Solution(object):
         else:
             nodes[-1].next = None
             return nodes[0]
+
+# 解题思路：
+# 使用“哑节点”记录链表头部
+#
+# 循环遍历链表时使用pre, cur记录上一个元素和当前元素
+#
+# class Solution(object):
+#     def removeElements(self, head, val):
+#         """
+#         :type head: ListNode
+#         :type val: int
+#         :rtype: ListNode
+#         """
+#         dummy = ListNode(0)
+#         dummy.next = head
+#         current = head
+#         prev = dummy
+#
+#         while current:
+#             if current.val == val:
+#                 prev.next = current.next
+#                 current = current.next
+#             else:
+#                 tmp = current.next
+#                 prev = current
+#                 current = tmp
+#         return dummy.next
